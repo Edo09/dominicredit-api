@@ -40,7 +40,7 @@ namespace dominicredit_api.Controllers
                     var roleResult = await _userManager.AddToRoleAsync(user, "User");
                     if (roleResult.Succeeded)
                     {
-                        return Ok(new { Token = "fake-jwt-token" });
+                        return Ok(new { Token = "fake-jwt-tokend" });
                     }
                     else
                     {
