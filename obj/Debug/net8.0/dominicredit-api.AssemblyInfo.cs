@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dominicredit-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5190d249556992b7ecfa3799f324d3704a61e99a")]
 [assembly: System.Reflection.AssemblyProductAttribute("dominicredit-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dominicredit-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

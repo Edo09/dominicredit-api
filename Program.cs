@@ -1,5 +1,7 @@
 using dominicredit_api.Data;
+using dominicredit_api.Interfaces;
 using dominicredit_api.Models;
+using dominicredit_api.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddScoped<ItokenService, TokenService>();
 
 
 // Add services to the container.
