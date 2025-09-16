@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\dominicredit-api.props" />
+</Project>

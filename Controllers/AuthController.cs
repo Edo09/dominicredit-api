@@ -1,6 +1,8 @@
 using dominicredit_api.Dtos.Auth;
+using dominicredit_api.Extensions;
 using dominicredit_api.Interfaces;
 using dominicredit_api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -93,5 +95,20 @@ namespace dominicredit_api.Controllers
             }
         }
 
+        [HttpGet("me")]
+        [Authorize]
+        public async Task<IActionResult> Me()
+        {
+            var username = User.GetUserName();
+
+            var user = await _userManager.FindByNameAsync(username ?? string.Empty);
+            if (user == null) return NotFound("Usuario no encontrado.");
+
+            return Ok(new NewUserDto
+            {
+                UserName = user.UserName ?? string.Empty,
+                Email = user.Email ?? string.Empty,
+            });
+        }
     }
 }

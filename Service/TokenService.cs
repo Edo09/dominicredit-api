@@ -25,7 +25,8 @@ namespace dominicredit_api.Service
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(JwtRegisteredClaimNames.GivenName, user.UserName)
+                new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
+                new Claim(ClaimTypes.Name, user.UserName)
             };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256);
@@ -33,7 +34,7 @@ namespace dominicredit_api.Service
             var token = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7),
+                Expires = DateTime.Now.AddDays(30),
                 SigningCredentials = creds,
                 Issuer = _config["JWT:Issuer"],
                 Audience = _config["JWT:Audience"]
