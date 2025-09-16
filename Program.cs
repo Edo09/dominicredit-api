@@ -96,12 +96,8 @@ builder.Services.AddScoped<ItokenService, TokenService>();
 
 var app = builder.Build();
 
-// Swagger (only in development, recommended)
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 

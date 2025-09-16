@@ -104,7 +104,7 @@ namespace dominicredit_api.Controllers
             var user = await _userManager.FindByNameAsync(username ?? string.Empty);
             if (user == null) return NotFound("Usuario no encontrado.");
 
-            return Ok(new NewUserDto
+            return Ok(new UserDto
             {
                 UserName = user.UserName ?? string.Empty,
                 Email = user.Email ?? string.Empty,
